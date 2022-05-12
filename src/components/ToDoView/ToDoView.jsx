@@ -3,7 +3,7 @@ import EmptyState from '../EmptyState';
 import ToDoItem from './ToDoItem';
 function ToDoView(){
 
-    const [isEmptyList] = useState(false);
+    const [isEmptyList] = useState(true);
     return (
     <div className='task_list_item'>
         {isEmptyList ? <EmptyState />: 

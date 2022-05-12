@@ -1,20 +1,15 @@
 
 import {React} from 'react';
+import Header from './components/Header';
+import MainContent from './components/MainContent';
 import TaskGlobalView from './components/TaskGlobalView/TaskGlobalView';
-import TaskCompleteView from './components/TaskCompleteView/TaskCompleteView';
-import ToDoView from './components/ToDoView/ToDoView';
-import AddTaskPannelView from './components/AddTaskPannelView/AddTaskPannelView';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Its my to-do list.
-      </header>
+      <Header />
       <TaskGlobalView />
-      <TaskCompleteView />
-      <ToDoView />
-      <AddTaskPannelView />
+      <MainContent />
     </div>
   );
 }

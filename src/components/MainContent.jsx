@@ -5,7 +5,7 @@ import AddTaskPannelView from './AddTaskPannelView/AddTaskPannelView';
 
 function MainContent(){
     return (
-    <main id='content' className='main_content' style={{marginLeft: 305+'px'}}>
+    <main id='content' className='main_content' style={{marginLeft: 268+'px'}}>
         <div id='editor'>
             <section className='view_content'>
                 <TaskCompleteView />

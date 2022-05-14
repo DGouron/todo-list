@@ -8,9 +8,9 @@ function Header(){
     <header id='top_bar'>
         <div id='top_bar_inner'>
             <div className='left_control'>
-            <ReduceButton />
-            <HomeButton /> 
-            <SearchField />
+                <ReduceButton />
+                <HomeButton /> 
+                <SearchField />
             </div>
         </div>
     </header>);

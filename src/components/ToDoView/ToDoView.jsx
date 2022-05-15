@@ -3,7 +3,7 @@ import EmptyState from '../EmptyState';
 import ToDoItem from './ToDoItem';
 import PropTypes from 'prop-types';
 
-function ToDoView({isEmptyList, toDoListItems = [1, 2]}){
+function ToDoView({isEmptyList, toDoListItems = []}){
 
     console.log(toDoListItems.lenght)
     return (

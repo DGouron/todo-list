@@ -72,9 +72,9 @@ height: 200px;
 
 .task_list_item {
   border-bottom: 1px solid #f0f0f0;
-    border-bottom-color: rgb(240, 240, 240);
-    border-color: hsla(0,0%,100%,.1);
-background-color: #1f1f1f;
+  border-bottom-color: rgb(240, 240, 240);
+  border-color: hsla(0,0%,100%,.1);
+  background-color: #1f1f1f;
 }
 
 .task_list_item .task_list_item__body {

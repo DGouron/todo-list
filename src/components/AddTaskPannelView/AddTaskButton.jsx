@@ -22,5 +22,5 @@ AddTaskButton.propTypes = {
     taskName: PropTypes.string,
     taskDescription: PropTypes.string,
     setNewTask: PropTypes.func,
-  }
+}
 export default AddTaskButton;

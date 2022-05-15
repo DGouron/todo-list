@@ -4,13 +4,14 @@ import ToDoItem from './ToDoItem';
 import PropTypes from 'prop-types';
 
 function ToDoView({isEmptyList, toDoListItems = []}){
-
-    console.log(toDoListItems.lenght)
+    const AllItemsToDisplay = toDoListItems;
     return (
     <div className='task_list_item'>
         {isEmptyList ? <EmptyState />: 
         <ul className='items'>
-            {toDoListItems.map(() => {<li><ToDoItem /></li>})}
+            {AllItemsToDisplay.map((item) => { 
+                return <ToDoItem key={item.taskName} title={item.taskName} description={item.taskDescription}/>
+            })}
         </ul>}
     </div>)
     ;

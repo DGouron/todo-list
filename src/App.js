@@ -8,13 +8,19 @@ function App() {
   const [toDoListItems, setToDoListItems] = useState([]);
   const [task, setNewTask] = useState({taskName: "", taskDescription: ""});
   
+  const clearState = () => {
+    setToDoListItems([]);
+  };
+
   useEffect(() => {
     const newToDoListItems = toDoListItems;
+    clearState();
+
     if(task.taskName.length > 2){
-      console.log('ADD IT')
-      newToDoListItems.push(task);
+      newToDoListItems.push(task)
+      console.table(newToDoListItems);
       setToDoListItems(newToDoListItems);
-      console.log(toDoListItems.length);
+
       if(toDoListItems.length !== 0){
         setEmptyState(false);
       } else {

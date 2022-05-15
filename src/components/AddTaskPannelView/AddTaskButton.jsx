@@ -10,11 +10,11 @@ function AddTaskButton({taskName, taskDescription, setNewTask}){
 }
 
 function handlerClick(taskName, taskDescription, setNewTask){
-    console.log(`Add task ${taskName} | ${taskDescription}`);
     let newTask = {
         taskName: taskName,
         taskDescription: taskDescription
     };
+    console.log(newTask);
     setNewTask(newTask);
 }
 

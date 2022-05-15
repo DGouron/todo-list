@@ -5,7 +5,7 @@ import AddTaskPannelView from './AddTaskPannelView/AddTaskPannelView';
 import Title from './Header/Title';
 import PropTypes from 'prop-types';
 
-function MainContent({isEmptyList, toDoListItems, setNewTask}){
+function MainContent({isEmptyList, toDoListItems =[], setNewTask}){
 
     return (
     <main id='content' className='main_content' style={{marginLeft: 268+'px'}}>

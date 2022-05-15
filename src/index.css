@@ -65,16 +65,20 @@ height: 200px;
 
 .items { /*Pour l'ul qui représente le board central avec la liste des taches et le formulaire*/
   margin: 0;
-    margin-bottom: 0px;
+  margin-bottom: 5px;
   padding: 0;
   list-style-type: none;
 }
 
+ul {
+  margin-bottom: 30px;
+}
+
 .task_list_item {
   border-bottom: 1px solid #f0f0f0;
-  border-bottom-color: rgb(240, 240, 240);
   border-color: hsla(0,0%,100%,.1);
   background-color: #1f1f1f;
+  width: 100%;
 }
 
 .task_list_item .task_list_item__body {
@@ -86,9 +90,10 @@ height: 200px;
 }
 .task_list_item .task_checkbox {
   margin: 8px 6px 0 -3px;
-  z-index: 1;
+  z-index: 2;
 }
-.task_checkbox, .task_checkbox .task_checkbox__circle {
+
+.task_checkbox .task_checkbox__circle {
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -103,7 +108,42 @@ height: 200px;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: hsla(0,0%,100%,.87);
 }
+.task_checkbox__circle {
+  background-color: transparent;
+  background-color: hsla(0,0%,50.2%,.1);
+  color: grey;
+
+  height: 16px;
+  width: 16px;
+  border: 1px solid #dcdcdc;
+  border-color: grey;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.task_checkbox:hover svg {
+  opacity: 1;
+}
+
+.task_checkbox svg {
+  display: inline-block;
+  border: 1px solid transparent;
+  height: 16px;
+  width: 16px;
+  margin-left: -8px;
+  transition: opacity .15s cubic-bezier(.4,0,1,1);
+  margin-top: -8px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+li.manager form {
+  padding: 0;
+  margin: 0;
+}
+
 textarea{
   width: 100%;
   background-color: transparent;

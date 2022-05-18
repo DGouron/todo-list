@@ -2,7 +2,6 @@ import {React} from 'react';
 
 function CurrentDate(){
     const currentDate = new Date();
-    console.log(currentDate.getMonth())
     const displayDate = `${translateDayName(currentDate.getDay())} ${currentDate.getDate()} ${translateMonthName(currentDate.getMonth())}`
     
     translateDayName('');

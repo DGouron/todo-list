@@ -4,6 +4,7 @@ import ToDoView from './ToDoView/ToDoView';
 import AddTaskPannelView from './AddTaskPannelView/AddTaskPannelView';
 import Title from './Header/Title';
 import PropTypes from 'prop-types';
+import OpenEditorButton from './AddTaskPannelView/OpenEditorButton';
 
 function MainContent({isEmptyList, toDoListItems =[], setNewTask, isEditorOpen, setIsEditorOpen, prepareTaskToDelete}){
 
@@ -12,21 +13,17 @@ function MainContent({isEmptyList, toDoListItems =[], setNewTask, isEditorOpen, 
         <div id='editor'>
             <section className='view_content'>
                 <Title />
+                <OpenEditorButton setIsEditorOpen={setIsEditorOpen} isEditorOpen = {isEditorOpen}/>
                 {!isEditorOpen && toDoListItems.length !== 0 ? 
-                    <button type="button" data-add-task-navigation-element="true" className="plus_add_button" name = {"OpenEditor"} onClick = {() => handleOpenEditorButtonClick(setIsEditorOpen, true)}><span className="icon_add" aria-hidden="true"><svg width="13" height="13"><path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fillRule="evenodd"></path></svg></span>Ajouter une tâche</button>
-                :
+                   <div></div>             :
                     <TaskCompleteView />
                 }
-                <ToDoView isEmptyList={isEmptyList} toDoListItems = {toDoListItems} prepareTaskToDelete={prepareTaskToDelete}/>
+                <ToDoView isEmptyList={isEmptyList} toDoListItems = {toDoListItems} prepareTaskToDelete={prepareTaskToDelete} isEditorOpen={isEditorOpen}/>
                 <AddTaskPannelView toDoListItems = {toDoListItems} setNewTask = {setNewTask} isEditorOpen = {isEditorOpen} setIsEditorOpen = {setIsEditorOpen}/>
             </section>
         </div> 
     </main>
     );
-}
-
-function handleOpenEditorButtonClick(handleFunction, status){
-    handleFunction(status);
 }
 
 MainContent.propTypes = {

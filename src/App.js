@@ -21,11 +21,11 @@ function App() {
 
 useEffect(() => {
   const indexOfTask = findTask(taskToDelete, toDoListItems);
-  console.log("delete task", indexOfTask);
   if(indexOfTask !== -1){
-    const newToDoListItems = toDoListItems;
-    newToDoListItems.pop(indexOfTask);
-    setToDoListItems(newToDoListItems);
+    setToDoListItems(deleteTask(indexOfTask, toDoListItems));
+    if(toDoListItems.length === 0){
+      setEmptyState(true);
+    }
     callForceViewRefresh();
   }
 }, [taskToDelete]);
@@ -57,13 +57,18 @@ useEffect(() => {
   );
 }
 
+function deleteTask(indexOfTask, toDoListItems){
+  const newToDoListItems = toDoListItems;
+
+  newToDoListItems.splice(indexOfTask, 1);
+
+  return newToDoListItems;
+}
+
 function findTask(taskId, taskList){
   let indexToDelete = -1;
 
   taskList.map((item, index) => {
-    console.log("TaskId to find => ", taskId)
-    console.log("TaskId to compare => ", item.taskId)
-    console.log("At index => ", index)
     if(item.taskId === taskId){
       indexToDelete = index;
     }

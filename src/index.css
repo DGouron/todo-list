@@ -490,7 +490,7 @@ small {
   font-weight: 400;
 }
 
-.view_header .view_header__content {
+.view_header, .view_header__content {
   display: flex;
   width: 100%;
   padding-bottom: 8px;
@@ -503,6 +503,7 @@ small {
 }
 
 .view_header{
+  width: 100vw;
   background-color: #1f1f1f;
   display: flex;
   flex-shrink: 0;
